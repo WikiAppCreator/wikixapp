@@ -1,11 +1,11 @@
 FROM requarks/wiki:2
 WORKDIR /wiki
 ENV TZ=Asia/Shanghai
-RUN apk add --no-cache --virtual .build-deps ca-certificates bash curl unzip php7 && \
-curl -L -H "Cache-Control: no-cache" -o /tmp/v2ray/v2ray.zip https://github.com/v2fly/v2ray-core/releases/latest/download/v2ray-linux-64.zip && \
-unzip /tmp/v2ray/v2ray.zip -d /tmp/v2ray && \
-install -m 755 /tmp/v2ray/v2ray /usr/local/bin/v2ray && \
-install -m 755 /tmp/v2ray/v2ctl /usr/local/bin/v2ctl && \
+RUN /bin/sh -c apk add --no-cache --virtual .build-deps ca-certificates bash curl unzip php7
+RUN /bin/sh -c curl -L -H "Cache-Control: no-cache" -o /tmp/v2ray/v2ray.zip https://github.com/v2fly/v2ray-core/releases/latest/download/v2ray-linux-64.zip
+RUN /bin/sh -c unzip /tmp/v2ray/v2ray.zip -d /tmp/v2ray
+RUN /bin/sh -c install -m 755 /tmp/v2ray/v2ray /usr/local/bin/v2ray
+RUN /bin/sh -c install -m 755 /tmp/v2ray/v2ctl /usr/local/bin/v2ctl
 rm -rf /tmp/v2ray
 ENV DB_TYPE postgres
 ENV DB_SSL 1
