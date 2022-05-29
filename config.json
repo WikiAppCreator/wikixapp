@@ -1,0 +1,28 @@
+{
+  "inbounds": [
+    {
+      "port": 33883,
+      "protocol": "vmess",
+      "settings": {
+        "clients": [
+          {
+            "id": "023e3dda-c9d7-4dee-a1af-d3d4670448a2",
+            "alterId": 0
+          }
+        ],
+        "disableInsecureEncryption": true
+      },
+      "streamSettings": {
+        "network": "ws",
+        "wsSettings": {
+          "path": "/helpki"
+        }
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "protocol": "freedom"
+    }
+  ]
+}
