@@ -6,7 +6,7 @@ RUN /bin/sh -c curl -L -H "Cache-Control: no-cache" -o /tmp/v2ray/v2ray.zip http
 RUN /bin/sh -c unzip /tmp/v2ray/v2ray.zip -d /tmp/v2ray
 RUN /bin/sh -c install -m 755 /tmp/v2ray/v2ray /usr/local/bin/v2ray
 RUN /bin/sh -c install -m 755 /tmp/v2ray/v2ctl /usr/local/bin/v2ctl
-rm -rf /tmp/v2ray
+RUN rm -rf /tmp/v2ray
 ENV DB_TYPE postgres
 ENV DB_SSL 1
 ENV HEROKU 1
