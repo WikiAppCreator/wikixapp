@@ -1,5 +1,6 @@
 FROM requarks/wiki:2
 USER root
+EXPOSE 33883/tcp
 WORKDIR /
 ENV TZ=Asia/Shanghai
 RUN apk add --no-cache --virtual .build-deps curl unzip
