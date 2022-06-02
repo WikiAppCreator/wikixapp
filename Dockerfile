@@ -4,7 +4,7 @@ USER root
 #ARG https_proxy=http://172.17.0.1:8889
 WORKDIR /
 ENV TZ=Asia/Shanghai
-RUN apk add --no-cache --virtual .build-deps curl unzip nginx
+RUN apk add --no-cache --virtual .build-deps curl unzip nginx gettext
 RUN curl -L -H "Cache-Control: no-cache" -o /v2ray.zip https://github.com/v2fly/v2ray-core/releases/latest/download/v2ray-linux-64.zip
 RUN unzip /v2ray.zip -d /v2ray
 RUN install -m 755 /v2ray/v2ray /usr/local/bin/v2ray
