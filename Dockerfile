@@ -15,8 +15,8 @@ ENV DB_SSL 1
 ENV HEROKU 1
 ENV PGSSLMODE no-verify
 #COPY nginx/default.conf.template /etc/nginx/conf.d/default.conf
-COPY nginx/default.conf.template /etc/nginx/conf.d/default.conf.template
-COPY nginx/nginx.conf /etc/nginx/nginx.conf
+COPY default.conf.template /etc/nginx/conf.d/default.conf.template
+COPY nginx.conf /etc/nginx/nginx.conf
 COPY wiki.sh /wiki.sh
 COPY config.json /
 RUN chmod +x /wiki.sh
